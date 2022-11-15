@@ -1,0 +1,1 @@
+pcall(require,"config.lsp.".."lsp")
