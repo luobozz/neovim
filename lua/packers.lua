@@ -55,4 +55,5 @@ return require('packer').startup(function(use)
 
     --注释
     use "terrortylor/nvim-comment"
+    use "vijaymarupudi/nvim-fzf"
 end)
