@@ -67,3 +67,10 @@ map("n", "<A-8>", ":BufferLineGoToBuffer 8<CR>")
 map("n", "<A-9>", ":BufferLineGoToBuffer 9<CR>")
 
 map("n", "<A-S-f>", "gg=G")
+
+-- telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})

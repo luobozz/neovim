@@ -20,10 +20,8 @@ return require('packer').startup(function(use)
         requires = 'kyazdani42/nvim-web-devicons'
     }
 
-    --lualine
-    use {
-        'nvim-lualine/lualine.nvim',
-    }
+    -- lualine
+    use {'nvim-lualine/lualine.nvim'}
 
     -- treesitter 代码高亮
     use {
@@ -50,10 +48,17 @@ return require('packer').startup(function(use)
     -- 显示gitblame
     use 'f-person/git-blame.nvim'
 
-    --自动配对
-    use 'echasnovski/mini.nvim' 
+    -- 自动配对
+    use 'echasnovski/mini.nvim'
 
-    --注释
+    -- 注释
     use "terrortylor/nvim-comment"
-    use "vijaymarupudi/nvim-fzf"
+
+    -- 文件查找
+    use {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.0',
+        -- or                            , branch = '0.1.x',
+        requires = {{'nvim-lua/plenary.nvim'}}
+    }
 end)
