@@ -6,7 +6,7 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = {'pyright', 'tsserver', 'sumneko_lua', 'volar'}
+local servers = {'pyright', 'tsserver', 'sumneko_lua', 'volar', 'eslint'}
 local serversSetting = {'pyright', 'tsserver', 'sumneko_lua'}
 for _, lsp in ipairs(servers) do
     local module = "config.lsp.settings." .. serversSetting[_]
