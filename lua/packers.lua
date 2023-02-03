@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
     -- treesitter 代码高亮
     use {
         'nvim-treesitter/nvim-treesitter',
+        requires = 'mrjones2014/nvim-ts-rainbow',
         run = ':TSUpdate'
     }
 
@@ -48,8 +49,8 @@ return require('packer').startup(function(use)
     -- 显示gitblame
     use 'f-person/git-blame.nvim'
 
-    -- 自动配对
-    use 'echasnovski/mini.nvim'
+    -- -- 自动配对
+    -- use 'echasnovski/mini.nvim'
 
     -- 注释
     use "terrortylor/nvim-comment"
@@ -61,4 +62,6 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = {{'nvim-lua/plenary.nvim'}}
     }
+
+    use('numToStr/prettierrc.nvim')
 end)
