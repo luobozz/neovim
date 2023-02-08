@@ -14,5 +14,3 @@
 --     end
 -- end
 require("index")
-
-vim.cmd[[colorscheme onenord]]

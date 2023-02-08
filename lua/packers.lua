@@ -5,6 +5,7 @@ return require('packer').startup(function(use)
 
     -- theme
     use 'rmehri01/onenord.nvim'
+    use 'mhartington/oceanic-next.nvim'
 
     -- tree
     use {

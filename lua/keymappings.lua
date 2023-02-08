@@ -54,7 +54,8 @@ map("n", "<A-Up>", ":m .-2<CR>==")
 map("n", "<A-o>", ":NvimTreeToggle<CR>")
 
 -- bufferline 
-map("n", "<leader>b", "<Cmd>BufferLinePick<CR>", {noremap = true, silent = true})
+map("n", "<leader>bb", "<Cmd>BufferLinePick<CR>", {noremap = true, silent = true})
+map("n", "<leader>bd", "<Cmd>BufferLinePickClose<CR>", {noremap = true, silent = true})
 -- 左右Tab切换
 map("n", "<A-Left>", ":BufferLineCyclePrev<CR>")
 map("n", "<A-Right>", ":BufferLineCycleNext<CR>")
