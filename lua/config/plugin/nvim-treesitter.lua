@@ -17,11 +17,7 @@ require'nvim-treesitter.configs'.setup {
             scope_incremental = '<TAB>'
         }
     },
-    -- 启用基于Treesitter的代码格式化(=) . NOTE: This is an experimental feature.
-    indent = {
-        enable = true
-    },
-    -- 启用彩虹括号
+    -- 启用基于    -- 启用彩虹括号
     rainbow = {
         enable = true,
         -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for

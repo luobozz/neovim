@@ -6,6 +6,7 @@ return require('packer').startup(function(use)
   -- theme
   use 'rmehri01/onenord.nvim'
   use "rafamadriz/neon"
+  use("folke/tokyonight.nvim")
 
   -- tree
   use {
@@ -14,6 +15,7 @@ return require('packer').startup(function(use)
     },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
+
   -- bufferline
   use {
     'akinsho/bufferline.nvim',
