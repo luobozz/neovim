@@ -1,31 +1,41 @@
-vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
+  use('wbthomason/packer.nvim')
 
   -- theme
-  use 'rmehri01/onenord.nvim'
-  use "rafamadriz/neon"
+  vim.cmd [[packadd packer.nvim]]
   use("folke/tokyonight.nvim")
 
+  --#region 基础建设
   -- tree
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {'nvim-tree/nvim-web-devicons' -- optional, for file icons
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
-
+  use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
   -- bufferline
-  use {
-    'akinsho/bufferline.nvim',
-    tag = "v3.*",
-    requires = 'kyazdani42/nvim-web-devicons'
-  }
+  use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }}) 
 
   -- lualine
-  use {'nvim-lualine/lualine.nvim'}
+  use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
+  use("arkav/lualine-lsp-progress")
 
+  -- telescope
+  use({ 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } })
+
+  -- dashboard
+  use("glepnir/dashboard-nvim")
+
+  -- project
+  use("ahmedkhalf/project.nvim")
+
+  -- 显示gitblame
+  use 'f-person/git-blame.nvim'
+
+  -- 自动配对
+  use('echasnovski/mini.nvim')
+
+  -- 注释
+  use "terrortylor/nvim-comment"
+  --#endregion 基础建设
+
+  --#region 语法配置
   -- treesitter 代码高亮
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -48,23 +58,7 @@ return require('packer').startup(function(use)
   -- lspkind
   use 'onsails/lspkind-nvim'
 
-  -- git
-  -- 显示gitblame
-  use 'f-person/git-blame.nvim'
-
-  -- -- 自动配对
-  -- use 'echasnovski/mini.nvim'
-
-  -- 注释
-  use "terrortylor/nvim-comment"
-
-  -- 文件查找
-  use {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.0',
-    -- or                            , branch = '0.1.x',
-    requires = {{'nvim-lua/plenary.nvim'}}
-  }
-
   use('numToStr/prettierrc.nvim')
+  --#endregion 语法配置
+
 end)

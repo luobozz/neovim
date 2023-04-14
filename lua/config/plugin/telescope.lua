@@ -1,30 +1,24 @@
-require('telescope').setup {
-    defaults = {
-        -- Default configuration for telescope goes here:
-        -- config_key = value,
-        mappings = {
-            i = {
-                -- map actions.which_key to <C-h> (default: <C-/>)
-                -- actions.which_key shows the mappings for your picker,
-                -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-                ["<C-h>"] = "which_key"
-            }
-        }
-    },
-    pickers = {
-        -- Default configuration for builtin pickers goes here:
-        -- picker_name = {
-        --   picker_config_key = value,
-        --   ...
-        -- }
-        -- Now the picker_config_key will be applied every time you call this
-        -- builtin picker
-    },
-    extensions = {
-        -- Your extension configuration goes here:
-        -- extension_name = {
-        --   extension_config_key = value,
-        -- }
-        -- please take a look at the readme of the extension you want to configure
+local status, telescope = pcall(require, "telescope")
+if not status then
+  vim.notify("没有找到 telescope")
+  return
+end
+
+telescope.setup({
+  defaults = {
+    -- 打开弹窗后进入的初始模式，默认为 insert，也可以是 normal
+    initial_mode = "insert",
+    -- 窗口内快捷键
+    mappings = require("keymappings").telescopeList,
+  },
+  pickers = {
+    -- 内置 pickers 配置
+    find_files = {
+      -- 查找文件换皮肤，支持的参数有： dropdown, cursor, ivy
+      --theme = "",
     }
-}
+  },
+  extensions = {
+    -- 扩展插件配置
+  },
+})

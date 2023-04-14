@@ -9,6 +9,8 @@ local map = function(mode, keys, cmd, opt)
     end
     vim.api.nvim_set_keymap(mode, keys, cmd, options)
 end
+-- 插件快捷键
+local pluginKeys = {}
 
 vim.g.mapleader = " " -- leader
 -- base
@@ -59,6 +61,7 @@ map("n", "<leader>bd", "<Cmd>BufferLinePickClose<CR>", {noremap = true, silent =
 -- 左右Tab切换
 map("n", "<A-Left>", ":BufferLineCyclePrev<CR>")
 map("n", "<A-Right>", ":BufferLineCycleNext<CR>")
+map("n", "<C-w>", ":Bdelete!<CR>")
 map("n", "<A-1>", ":BufferLineGoToBuffer 1<CR>")
 map("n", "<A-2>", ":BufferLineGoToBuffer 2<CR>")
 map("n", "<A-3>", ":BufferLineGoToBuffer 3<CR>")
@@ -73,7 +76,26 @@ map("n", "<A-S-f>", "gg=G")
 
 -- telescope
 local builtin = require('telescope.builtin')
+map("n", "<leader>fp", ":Telescope projects<CR>")
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+--vim.keymap.set('n', '<leader>fp', builtin.project, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+pluginKeys.telescopeList = {
+  i = {
+    -- 上下移动
+    ["<A-i>"] = "move_selection_previous",
+    ["<A-k>"] = "move_selection_next",
+    -- 历史记录
+    --["<C-n>"] = "cycle_history_next",
+    --["<C-p>"] = "cycle_history_prev",
+    -- 关闭窗口
+    --["<C-c>"] = "close",
+    -- 预览窗口上下滚动
+    --["<C-u>"] = "preview_scrolling_up",
+    --["<C-d>"] = "preview_scrolling_down",
+  },
+}
+
+return pluginKeys

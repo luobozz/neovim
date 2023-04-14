@@ -1,5 +1,4 @@
 require("packers")
-require("config.index")
 require("keymappings")
 require("basic")
-require("colorscheme")
+require("config.index")
