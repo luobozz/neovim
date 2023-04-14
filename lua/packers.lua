@@ -57,8 +57,6 @@ return require('packer').startup(function(use)
   use 'rafamadriz/friendly-snippets'
   -- lspkind
   use 'onsails/lspkind-nvim'
-
-  use('numToStr/prettierrc.nvim')
   --#endregion 语法配置
 
 end)

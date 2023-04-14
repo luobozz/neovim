@@ -1,13 +1,13 @@
 local map = function(mode, keys, cmd, opt)
-    local options = {
-        noremap = true,
-        silent = true,
-        nowait = true
-    }
-    if opt then
-        options = vim.tbl_extend("force", options, opt)
-    end
-    vim.api.nvim_set_keymap(mode, keys, cmd, options)
+  local options = {
+    noremap = true,
+    silent = true,
+    nowait = true
+  }
+  if opt then
+    options = vim.tbl_extend("force", options, opt)
+  end
+  vim.api.nvim_set_keymap(mode, keys, cmd, options)
 end
 -- 插件快捷键
 local pluginKeys = {}
@@ -55,9 +55,9 @@ map("n", "<A-Up>", ":m .-2<CR>==")
 -- nvim-tree
 map("n", "<A-o>", ":NvimTreeToggle<CR>")
 
--- bufferline 
-map("n", "<leader>bb", "<Cmd>BufferLinePick<CR>", {noremap = true, silent = true})
-map("n", "<leader>bd", "<Cmd>BufferLinePickClose<CR>", {noremap = true, silent = true})
+-- bufferline
+map("n", "<leader>bb", "<Cmd>BufferLinePick<CR>", { noremap = true, silent = true })
+map("n", "<leader>bd", "<Cmd>BufferLinePickClose<CR>", { noremap = true, silent = true })
 -- 左右Tab切换
 map("n", "<A-Left>", ":BufferLineCyclePrev<CR>")
 map("n", "<A-Right>", ":BufferLineCycleNext<CR>")
@@ -72,7 +72,7 @@ map("n", "<A-7>", ":BufferLineGoToBuffer 7<CR>")
 map("n", "<A-8>", ":BufferLineGoToBuffer 8<CR>")
 map("n", "<A-9>", ":BufferLineGoToBuffer 9<CR>")
 
-map("n", "<A-S-f>", "gg=G")
+map("n", "<A-S-f>", "<cmd>lua vim.lsp.buf.format { async = true }<CR>")
 
 -- telescope
 local builtin = require('telescope.builtin')
