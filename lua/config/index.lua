@@ -9,6 +9,7 @@ require("config.plugin.nvim_comment")
 require("config.plugin.telescope")
 require("config.plugin.dashboard")
 require("config.plugin.project")
+require("config.plugin.wilder")
 
 
 require("config.lsp.index")

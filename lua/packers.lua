@@ -1,4 +1,3 @@
-
 return require('packer').startup(function(use)
   use('wbthomason/packer.nvim')
 
@@ -34,8 +33,10 @@ return require('packer').startup(function(use)
   -- 注释
   use "terrortylor/nvim-comment"
 
-  --#endregion 基础建设
-
+  -- wilder 命令模式增强
+  use {
+    'gelguy/wilder.nvim',
+  }
   --#region 语法配置
   -- treesitter 代码高亮
   use {
@@ -59,5 +60,4 @@ return require('packer').startup(function(use)
   -- lspkind
   use 'onsails/lspkind-nvim'
   --#endregion 语法配置
-
 end)
