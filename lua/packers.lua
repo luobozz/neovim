@@ -38,9 +38,13 @@ return require('packer').startup(function(use)
     'gelguy/wilder.nvim',
   }
 
+  -- 浮动终端
+  use ('akinsho/toggleterm.nvim')
+
   -- neovim 透明
   use { 'xiyaowong/transparent.nvim' }
   --#region 语法配置
+
   -- treesitter 代码高亮
   use {
     'nvim-treesitter/nvim-treesitter',

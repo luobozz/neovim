@@ -11,6 +11,7 @@ require("config.plugin.dashboard")
 require("config.plugin.project")
 require("config.plugin.wilder")
 require("config.plugin.transparent")
+require("config.plugin.toggleterm")
 
 
 require("config.lsp.index")

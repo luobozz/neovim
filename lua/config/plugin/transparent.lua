@@ -11,6 +11,6 @@ transparent.setup({
     'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
     'SignColumn', 'CursorLineNr', 'EndOfBuffer',
   },
-  extra_groups = {"NvimTreeNormal"},   -- table: additional groups that should be cleared
+  extra_groups = {"NvimTreeNormal","NormalFloat"},   -- table: additional groups that should be cleared
   exclude_groups = {}, -- table: groups you don't want to clear
 })
