@@ -9,7 +9,7 @@ return require('packer').startup(function(use)
   -- tree
   use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
   -- bufferline
-  use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }}) 
+  use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
 
   -- lualine
   use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
@@ -37,6 +37,9 @@ return require('packer').startup(function(use)
   use {
     'gelguy/wilder.nvim',
   }
+
+  -- neovim 透明
+  use { 'xiyaowong/transparent.nvim' }
   --#region 语法配置
   -- treesitter 代码高亮
   use {
@@ -46,12 +49,12 @@ return require('packer').startup(function(use)
   }
 
   -- lsp
-  use {"williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig"}
+  use { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig" }
   -- nvim-cmp
   use 'hrsh7th/cmp-nvim-lsp' -- { name = nvim_lsp }
-  use 'hrsh7th/cmp-buffer' -- { name = 'buffer' },
-  use 'hrsh7th/cmp-path' -- { name = 'path' }
-  use 'hrsh7th/cmp-cmdline' -- { name = 'cmdline' }
+  use 'hrsh7th/cmp-buffer'   -- { name = 'buffer' },
+  use 'hrsh7th/cmp-path'     -- { name = 'path' }
+  use 'hrsh7th/cmp-cmdline'  -- { name = 'cmdline' }
   use 'hrsh7th/nvim-cmp'
   -- vsnip
   use 'hrsh7th/cmp-vsnip' -- { name = 'vsnip' }

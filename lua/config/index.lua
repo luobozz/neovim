@@ -10,6 +10,7 @@ require("config.plugin.telescope")
 require("config.plugin.dashboard")
 require("config.plugin.project")
 require("config.plugin.wilder")
+require("config.plugin.transparent")
 
 
 require("config.lsp.index")
