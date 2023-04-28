@@ -85,8 +85,7 @@ local plugin = function()
       -- 上下移动
       ["<A-i>"] = "move_selection_previous",
       ["<A-k>"] = "move_selection_next",
-      -- 历史记录
-      --["<C-n>"] = "cycle_history_next",
+      -- 历史记录 ["<C-n>"] = "cycle_history_next",
       --["<C-p>"] = "cycle_history_prev",
       -- 关闭窗口
       --["<C-c>"] = "close",
@@ -95,6 +94,12 @@ local plugin = function()
       --["<C-d>"] = "preview_scrolling_down",
     },
   }
+
+  --toggleterm
+ -- local TM=require("config.plugin.toggleterm")
+  --TM.setFTToggleMap('<c-t>', 'TERM', '',map)
+  --TM.setFTToggleMap('<c-f>', 'RANGER', 'ranger',map)
+  --TM.setFTToggleMap('<c-b>', 'DBUI', 'nvim +CALLDB',map)
   return {
     telescopeList = telescopeList
   }
